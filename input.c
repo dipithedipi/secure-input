@@ -120,18 +120,3 @@ bool getInput(const char *prompt, bool retryOnInvalid, char *result, size_t buff
     }
 }
 
-int main(void) {
-    char inputString[DEFAULT_BUFFER_SIZE];
-
-    // Esempio di utilizzo della funzione getInput
-    if (getInput("Inserisci una stringa", true, inputString, sizeof(inputString))) {
-        printf("Hai inserito: %s\n", inputString);
-    } else {
-        printf("Input non valido.\n");
-    }
-
-    printf("%lu\n",sizeof(inputString));
-
-
-    return 0;
-}
