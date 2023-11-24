@@ -173,3 +173,37 @@ int main() {
 
     return 0;
 }
+```
+
+### `getNumber` Function
+
+| Parameters                  | User Input | Valid | Invalid Reason                  |
+|-----------------------------|------------|-------|----------------------------------|
+| `prompt`: "Enter an integer" | "3a1"      | No    | Non-numeric characters    |
+| `retryOnInvalid`: false | "123"      | Yes   |                                  |
+| `result`: &integerValue      | "abc"      | No    | Non-numeric characters          |
+| `bufferSize`: DEFAULT_SIZE   | "456"      | Yes   |                                  |
+|                              | "12.34"    | No    | Decimal point in an integer     |
+|                              | " \n"    | No    | Space char and empty     |
+
+### `getDecimal` Function
+
+| Parameters                       | User Input | Valid | Invalid Reason              |
+|----------------------------------|------------|-------|------------------------------|
+| `prompt`: "Enter a decimal number" | "as32.3" | No| Non-numeric characters|
+| `retryOnInvalid`: false      | "12.34"    | Yes   |                              |
+| `result`: &decimalValue           | "abc"      | No    | Non-numeric characters      |
+| `bufferSize`: DEFAULT_SIZE        | "567.89"   | Yes   |                              |
+|                              | " \n"    | No    | Space char and empty     |
+|                                  | "1a.2b"    | No    | Invalid decimal characters |
+
+### `getInput` Function
+
+| Parameters               | User Input | Valid | Invalid Reason                  |
+|--------------------------|------------|-------|----------------------------------|
+| `prompt`: "Enter a string"| "\n" | No| Empty string, Newline character  |
+| `retryOnInvalid`: true/false | "Hello"    | Yes   |                                  |
+|      `result`: stringValue                        | "123"    | Yes    |      |
+|  `bufferSize`: DEFAULT_SIZE    | ""         | No    | Empty string                    |
+|  | "World"    | Yes   |                                  |
+|                           | "C\n"      | Yes    |    |
